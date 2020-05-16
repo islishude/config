@@ -1,20 +1,18 @@
 ZSH_THEME="robbyrussell"
 
-source $ZSH/oh-my-zsh.sh
-
 plugins=(
     git
     autojump
-    zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-completions
+    zsh-autosuggestions
+    tmux
+    docker
+    docker-compose
 )
 
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh/site-functions:~/.zfunc:$FPATH
-
-    autoload -Uz compinit && compinit -i
-fi
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
+autoload -Uz compinit && compinit -i
 
 export v2ray="http://127.0.0.1:1087"
 alias poff="unset HTTP_PROXY;unset HTTPS_PROXY;"
